@@ -10,8 +10,11 @@ import javax.swing.JLabel;
 public class PaginaPricipal extends javax.swing.JFrame {
 
     private int Contador = 0, ContadorContenido = 0;
+    
+    //Hacer Un tratamiento de las Instancias de las imagenes
     private ImageIcon PROTOCOLO = new ImageIcon(getClass().getResource("/Imagenes/router-inalambrico (1).png"));
     private ImageIcon Html = new ImageIcon(getClass().getResource("/Imagenes/HTML (2).png"));
+    
     private MensajeOculto Ventana = new MensajeOculto();
     private AudioClip Morgan;
     private ArrayList<JLabel> Labels = new ArrayList<>();
@@ -107,6 +110,19 @@ public class PaginaPricipal extends javax.swing.JFrame {
         return Textos;
     }
     
+    public void PushTexts(int Contador){
+        ArrayList<String>Aux;
+        Aux = Texto(Contador);
+        
+        //LLenamos los Titulos
+        for (int i = 0; i < 12; i++) {
+            Labels.get(i).setText(Aux.get(i));
+        }
+        
+        //Limpiamos el Arraylist Aux para introducir nuevos datos
+        Aux.clear();
+    }
+
     public void Invisible() {
         //For para Ocultar los Labels
         for (int i = 0; i < Labels.size(); i++) {
@@ -117,11 +133,8 @@ public class PaginaPricipal extends javax.swing.JFrame {
         Atras.setVisible(false);
 
     }
-
+    
     public void Visible(int Contador) {
-        
-        ArrayList<String>Aux;
-        
         //For para Mostrar los Labels
         for (int i = 0; i < 24; i++) {
             Labels.get(i).setVisible(true);
@@ -129,38 +142,21 @@ public class PaginaPricipal extends javax.swing.JFrame {
         
         //Condicional para cambiar el contenido de la menu
         if (Contador == 0) {
-
-             Aux = Texto(Contador);
-        
             //LLenamos los Titulos
-            for (int i = 0; i < 12; i++) {
-                Labels.get(i).setText(Aux.get(i));
-            }
+            PushTexts(Contador);
              
             //LLenamos las Imagenes
             for (int i = 12; i < 24; i++) {
                 Labels.get(i).setIcon(new ImageIcon(PROTOCOLO.getImage().getScaledInstance(Labels.get(i).getWidth(), Labels.get(i).getHeight(), Image.SCALE_SMOOTH)));
             }
-            
-            //Limpiamos el Arraylist Aux para introducir nuevos datos
-            Aux.clear();
-            
         } else if (Contador == 1) {
-
-            Aux = Texto(Contador);
-        
             //LLenamos los Titulos
-            for (int i = 0; i < 12; i++) {
-                Labels.get(i).setText(Aux.get(i));
-            }
+            PushTexts(Contador);
             
             //LLenamos las Imagenes
             for (int i = 12; i < 24; i++) {
                 Labels.get(i).setIcon(new ImageIcon(Html.getImage().getScaledInstance(Labels.get(i).getWidth(), Labels.get(i).getHeight(), Image.SCALE_SMOOTH)));
             }
-            
-            //Limpiamos el Arraylist Aux para introducir nuevos datos
-            Aux.clear();
         }
     }
             
