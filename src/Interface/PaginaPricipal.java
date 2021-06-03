@@ -54,6 +54,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
     }
     
     public void LabelStyles(){
+        
         //Titulos de los Temas
         Labels.add(Tema1);
         Labels.add(Tema2);
