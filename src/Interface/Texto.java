@@ -20,7 +20,7 @@ public class Texto {
     private ArrayList<String> Contenido_Protocolos_Tema1;
     private ArrayList<String> Contenido_HTML_Tema1;
 
-    public ArrayList getETIQUETA1() {
+    public String getETIQUETA1(int index) {
         String T1_Protocolos = "1 . Fundamentos Redes";
         String T1_Html = "1 . Introduccion a HTML";
 
@@ -28,10 +28,10 @@ public class Texto {
         Para_Tema1.add(T1_Protocolos);
         Para_Tema1.add(T1_Html);
 
-        return Para_Tema1;
+        return Para_Tema1.get(index);
     }
 
-    public ArrayList getETIQUETA2() {
+    public String getETIQUETA2(int index) {
         String T2_Protocolos = "2 . Modelo TCP/IP";
         String T2_Html = "2 . Meta Tags basicos";
 
@@ -39,10 +39,10 @@ public class Texto {
         Para_Tema2.add(T2_Protocolos);
         Para_Tema2.add(T2_Html);
 
-        return Para_Tema2;
+        return Para_Tema2.get(index);
     }
 
-    public ArrayList getETIQUETA3() {
+    public String getETIQUETA3(int index) {
         String T3_Protocolos = "3 . Capa de Aplicacion";
         String T3_Html = "3 . Etiquetas de Texto";
 
@@ -50,10 +50,10 @@ public class Texto {
         Para_Tema3.add(T3_Protocolos);
         Para_Tema3.add(T3_Html);
 
-        return Para_Tema3;
+        return Para_Tema3.get(index);
     }
 
-    public ArrayList getETIQUETA4() {
+    public String getETIQUETA4(int index) {
         String T4_Protocolos = "4 . Capa de Transporte";
         String T4_Html = "4 . Caracteres Especiales";
 
@@ -61,10 +61,10 @@ public class Texto {
         Para_Tema4.add(T4_Protocolos);
         Para_Tema4.add(T4_Html);
 
-        return Para_Tema4;
+        return Para_Tema4.get(index);
     }
 
-    public ArrayList getETIQUETA5() {
+    public String getETIQUETA5(int index) {
         String T5_Protocolos = "5 . Capa de Internet";
         String T5_Html = "5 . Tablas";
 
@@ -72,10 +72,10 @@ public class Texto {
         Para_Tema5.add(T5_Protocolos);
         Para_Tema5.add(T5_Html);
 
-        return Para_Tema5;
+        return Para_Tema5.get(index);
     }
 
-    public ArrayList getETIQUETA6() {
+    public String getETIQUETA6(int index) {
         String T6_Protocolos = "6 . Capa de Interfaz de Red";
         String T6_Html = "6 . Listas";
 
@@ -83,10 +83,10 @@ public class Texto {
         Para_Tema6.add(T6_Protocolos);
         Para_Tema6.add(T6_Html);
 
-        return Para_Tema6;
+        return Para_Tema6.get(index);
     }
 
-    public ArrayList getETIQUETA7() {
+    public String getETIQUETA7(int index) {
         String T7_Protocolos = "7 . Redes Informaticas";
         String T7_Html = "7 . Imagenes";
 
@@ -94,10 +94,10 @@ public class Texto {
         Para_Tema7.add(T7_Protocolos);
         Para_Tema7.add(T7_Html);
 
-        return Para_Tema7;
+        return Para_Tema7.get(index);
     }
 
-    public ArrayList getETIQUETA8() {
+    public String getETIQUETA8(int index) {
         String T8_Protocolos = "8 . Tipos de Redes";
         String T8_Html = "8 . Enlaces";
 
@@ -105,10 +105,10 @@ public class Texto {
         Para_Tema8.add(T8_Protocolos);
         Para_Tema8.add(T8_Html);
 
-        return Para_Tema8;
+        return Para_Tema8.get(index);
     }
 
-    public ArrayList getETIQUETA9() {
+    public String getETIQUETA9(int index) {
         String T9_Protocolos = "9 . Elementos de una Red";
         String T9_Html = "9 . Formularios";
 
@@ -116,10 +116,10 @@ public class Texto {
         Para_Tema9.add(T9_Protocolos);
         Para_Tema9.add(T9_Html);
 
-        return Para_Tema9;
+        return Para_Tema9.get(index);
     }
 
-    public ArrayList getETIQUETA10() {
+    public String getETIQUETA10(int index) {
         String T10_Protocolos = "10 . Topologia de la Red";
         String T10_Html = "10 . Frames";
 
@@ -127,10 +127,10 @@ public class Texto {
         Para_Tema10.add(T10_Protocolos);
         Para_Tema10.add(T10_Html);
 
-        return Para_Tema10;
+        return Para_Tema10.get(index);
     }
 
-    public ArrayList getETIQUETA11() {
+    public String getETIQUETA11(int index) {
         String T11_Protocolos = "11 . Modelo OSI";
         String T11_Html = "11 . JavaScript y HTML";
 
@@ -138,17 +138,17 @@ public class Texto {
         Para_Tema11.add(T11_Protocolos);
         Para_Tema11.add(T11_Html);
 
-        return Para_Tema11;
+        return Para_Tema11.get(index);
     }
 
-    public ArrayList getETIQUETA12() {
+    public String getETIQUETA12(int index) {
         String T12_Protocolos = "12 . Firewall";
         String T12_Html = "12 . Manual";
         Para_Tema12 = new ArrayList<>();
         Para_Tema12.add(T12_Protocolos);
         Para_Tema12.add(T12_Html);
 
-        return Para_Tema12;
+        return Para_Tema12.get(index);
     }
 
     
@@ -500,5 +500,9 @@ public class Texto {
         Contenido_HTML_Tema1.add(Pagina5);
 
         return Contenido_HTML_Tema1;
+    }
+
+    Object getETIQUETA11() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

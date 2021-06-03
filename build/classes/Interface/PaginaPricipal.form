@@ -247,7 +247,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(ContenidosVetores.getETIQUETA1().get(0))" type="code"/>
+              <Connection code="ContenidosVetores.getETIQUETA1(Contador)" type="code"/>
             </Property>
           </Properties>
           <Events>
@@ -281,7 +281,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(ContenidosVetores.getETIQUETA2().get(0))&#xd;&#xa;" type="code"/>
+              <Connection code="ContenidosVetores.getETIQUETA2(Contador)&#xa;" type="code"/>
             </Property>
           </Properties>
           <Constraints>
@@ -311,7 +311,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(ContenidosVetores.getETIQUETA3().get(0))&#xd;&#xa;" type="code"/>
+              <Connection code="ContenidosVetores.getETIQUETA3(Contador)&#xa;" type="code"/>
             </Property>
           </Properties>
           <Constraints>
@@ -341,7 +341,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(ContenidosVetores.getETIQUETA4().get(0))&#xd;&#xa;" type="code"/>
+              <Connection code="ContenidosVetores.getETIQUETA4(Contador)&#xa;    " type="code"/>
             </Property>
           </Properties>
           <Constraints>
@@ -371,7 +371,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(ContenidosVetores.getETIQUETA5().get(0))&#xd;&#xa;" type="code"/>
+              <Connection code="ContenidosVetores.getETIQUETA5(Contador)&#xa;    " type="code"/>
             </Property>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>
@@ -402,7 +402,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(ContenidosVetores.getETIQUETA6().get(0))&#xd;&#xa;" type="code"/>
+              <Connection code="ContenidosVetores.getETIQUETA6(Contador)&#xa;    " type="code"/>
             </Property>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>
@@ -433,7 +433,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(ContenidosVetores.getETIQUETA7().get(0))&#xd;&#xa;" type="code"/>
+              <Connection code="ContenidosVetores.getETIQUETA7(Contador)&#xa;    " type="code"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
@@ -465,7 +465,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(ContenidosVetores.getETIQUETA8().get(0))" type="code"/>
+              <Connection code="ContenidosVetores.getETIQUETA8(Contador)" type="code"/>
             </Property>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>
@@ -496,7 +496,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(ContenidosVetores.getETIQUETA9().get(0))&#xd;&#xa;" type="code"/>
+              <Connection code="ContenidosVetores.getETIQUETA9(Contador)&#xa;    " type="code"/>
             </Property>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>
@@ -527,7 +527,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(ContenidosVetores.getETIQUETA10().get(0))" type="code"/>
+              <Connection code="ContenidosVetores.getETIQUETA10(Contador)" type="code"/>
             </Property>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>
@@ -558,7 +558,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(ContenidosVetores.getETIQUETA11().get(0))" type="code"/>
+              <Connection code="ContenidosVetores.getETIQUETA11(Contador)" type="code"/>
             </Property>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>
@@ -589,7 +589,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(ContenidosVetores.getETIQUETA12().get(0))" type="code"/>
+              <Connection code="ContenidosVetores.getETIQUETA12(Contador)" type="code"/>
             </Property>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>

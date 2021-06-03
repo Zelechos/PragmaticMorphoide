@@ -10,13 +10,14 @@ import javax.swing.JLabel;
 public class PaginaPricipal extends javax.swing.JFrame {
 
     private int Contador = 0, ContadorContenido = 0;
-    private Texto ContenidosVetores = new Texto();
     private ImageIcon PROTOCOLO = new ImageIcon(getClass().getResource("/Imagenes/router-inalambrico (1).png"));
     private ImageIcon Html = new ImageIcon(getClass().getResource("/Imagenes/HTML (2).png"));
     private MensajeOculto Ventana = new MensajeOculto();
     private AudioClip Morgan;
     private ArrayList<JLabel> Labels = new ArrayList<>();
     private ArrayList<String> Textos = new ArrayList<>();
+    private Texto ContenidosVetores = new Texto();
+
     
     private String Encabezado="<html><body>"
             + "<h1 align=center><FONT SIZE = 7><strong>Bienvenido a Pragmatic Morphoide</strong></font></h1><br><br>"
@@ -54,8 +55,8 @@ public class PaginaPricipal extends javax.swing.JFrame {
     }
     
     public void LabelStyles(){
-        
         //Titulos de los Temas
+        //Intentar reducir esto
         Labels.add(Tema1);
         Labels.add(Tema2);
         Labels.add(Tema3);
@@ -69,6 +70,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
         Labels.add(Tema11);
         Labels.add(Tema12);
         //Logo de los Temas
+        //Intentar reducir esto
         Labels.add(LogoTema1);
         Labels.add(LogoTema2);
         Labels.add(LogoTema3);
@@ -89,19 +91,20 @@ public class PaginaPricipal extends javax.swing.JFrame {
         Labels.add(ContenidoRedes);
     }
     
-    public void Texto(){
-        Textos.add(String.valueOf(ContenidosVetores.getETIQUETA1().get(Contador)));
-        Textos.add(String.valueOf(ContenidosVetores.getETIQUETA2().get(Contador)));
-        Textos.add(String.valueOf(ContenidosVetores.getETIQUETA3().get(Contador)));
-        Textos.add(String.valueOf(ContenidosVetores.getETIQUETA4().get(Contador)));
-        Textos.add(String.valueOf(ContenidosVetores.getETIQUETA5().get(Contador)));
-        Textos.add(String.valueOf(ContenidosVetores.getETIQUETA6().get(Contador)));
-        Textos.add(String.valueOf(ContenidosVetores.getETIQUETA7().get(Contador)));
-        Textos.add(String.valueOf(ContenidosVetores.getETIQUETA8().get(Contador)));
-        Textos.add(String.valueOf(ContenidosVetores.getETIQUETA9().get(Contador)));
-        Textos.add(String.valueOf(ContenidosVetores.getETIQUETA10().get(Contador)));
-        Textos.add(String.valueOf(ContenidosVetores.getETIQUETA11().get(Contador)));
-        Textos.add(String.valueOf(ContenidosVetores.getETIQUETA12().get(Contador)));
+    public ArrayList<String> Texto(int Contador){
+        Textos.add(ContenidosVetores.getETIQUETA1(Contador));
+        Textos.add(ContenidosVetores.getETIQUETA2(Contador));
+        Textos.add(ContenidosVetores.getETIQUETA3(Contador));
+        Textos.add(ContenidosVetores.getETIQUETA4(Contador));
+        Textos.add(ContenidosVetores.getETIQUETA5(Contador));
+        Textos.add(ContenidosVetores.getETIQUETA6(Contador));
+        Textos.add(ContenidosVetores.getETIQUETA7(Contador));
+        Textos.add(ContenidosVetores.getETIQUETA8(Contador));
+        Textos.add(ContenidosVetores.getETIQUETA9(Contador));
+        Textos.add(ContenidosVetores.getETIQUETA10(Contador));
+        Textos.add(ContenidosVetores.getETIQUETA11(Contador));
+        Textos.add(ContenidosVetores.getETIQUETA12(Contador));
+        return Textos;
     }
     
     public void Invisible() {
@@ -115,30 +118,49 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
     }
 
-    public void Visible() {
+    public void Visible(int Contador) {
+        
+        ArrayList<String>Aux;
         
         //For para Mostrar los Labels
         for (int i = 0; i < 24; i++) {
             Labels.get(i).setVisible(true);
         }
         
-        //Aqui Arreglar el error de los textos que no cambian en base al tema asignadoo !!!! urgente
-        for (int i = 0; i < 12; i++) {
-            Labels.get(i).setText(Textos.get(i));
-        }
-        
+        //Condicional para cambiar el contenido de la menu
         if (Contador == 0) {
 
+             Aux = Texto(Contador);
+        
+            //LLenamos los Titulos
+            for (int i = 0; i < 12; i++) {
+                Labels.get(i).setText(Aux.get(i));
+            }
+             
+            //LLenamos las Imagenes
             for (int i = 12; i < 24; i++) {
                 Labels.get(i).setIcon(new ImageIcon(PROTOCOLO.getImage().getScaledInstance(Labels.get(i).getWidth(), Labels.get(i).getHeight(), Image.SCALE_SMOOTH)));
             }
-
+            
+            //Limpiamos el Arraylist Aux para introducir nuevos datos
+            Aux.clear();
+            
         } else if (Contador == 1) {
 
+            Aux = Texto(Contador);
+        
+            //LLenamos los Titulos
+            for (int i = 0; i < 12; i++) {
+                Labels.get(i).setText(Aux.get(i));
+            }
+            
+            //LLenamos las Imagenes
             for (int i = 12; i < 24; i++) {
                 Labels.get(i).setIcon(new ImageIcon(Html.getImage().getScaledInstance(Labels.get(i).getWidth(), Labels.get(i).getHeight(), Image.SCALE_SMOOTH)));
             }
             
+            //Limpiamos el Arraylist Aux para introducir nuevos datos
+            Aux.clear();
         }
     }
             
@@ -309,7 +331,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
         Tema1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         Tema1.setForeground(new java.awt.Color(255, 255, 255));
-        Tema1.setText(String.valueOf(ContenidosVetores.getETIQUETA1().get(0)));
+        Tema1.setText(ContenidosVetores.getETIQUETA1(Contador));
         Tema1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Tema1MouseClicked(evt);
@@ -325,7 +347,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
         Tema2.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         Tema2.setForeground(new java.awt.Color(255, 255, 255));
-        Tema2.setText(String.valueOf(ContenidosVetores.getETIQUETA2().get(0))
+        Tema2.setText(ContenidosVetores.getETIQUETA2(Contador)
         );
         ListadoCursos.add(Tema2, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 80, 250, 40));
 
@@ -334,7 +356,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
         Tema3.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         Tema3.setForeground(new java.awt.Color(255, 255, 255));
-        Tema3.setText(String.valueOf(ContenidosVetores.getETIQUETA3().get(0))
+        Tema3.setText(ContenidosVetores.getETIQUETA3(Contador)
         );
         ListadoCursos.add(Tema3, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 140, 250, 40));
 
@@ -343,7 +365,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
         Tema4.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         Tema4.setForeground(new java.awt.Color(255, 255, 255));
-        Tema4.setText(String.valueOf(ContenidosVetores.getETIQUETA4().get(0))
+        Tema4.setText(ContenidosVetores.getETIQUETA4(Contador)
         );
         ListadoCursos.add(Tema4, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 200, 250, 40));
 
@@ -352,7 +374,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
         Tema5.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         Tema5.setForeground(new java.awt.Color(255, 255, 255));
-        Tema5.setText(String.valueOf(ContenidosVetores.getETIQUETA5().get(0))
+        Tema5.setText(ContenidosVetores.getETIQUETA5(Contador)
         );
         Tema5.setName(""); // NOI18N
         ListadoCursos.add(Tema5, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 260, 250, 40));
@@ -362,7 +384,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
         Tema6.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         Tema6.setForeground(new java.awt.Color(255, 255, 255));
-        Tema6.setText(String.valueOf(ContenidosVetores.getETIQUETA6().get(0))
+        Tema6.setText(ContenidosVetores.getETIQUETA6(Contador)
         );
         Tema6.setName(""); // NOI18N
         ListadoCursos.add(Tema6, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 320, 280, 40));
@@ -372,7 +394,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
         Tema7.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         Tema7.setForeground(new java.awt.Color(255, 255, 255));
-        Tema7.setText(String.valueOf(ContenidosVetores.getETIQUETA7().get(0))
+        Tema7.setText(ContenidosVetores.getETIQUETA7(Contador)
         );
         Tema7.setToolTipText("");
         Tema7.setName(""); // NOI18N
@@ -383,7 +405,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
         Tema8.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         Tema8.setForeground(new java.awt.Color(255, 255, 255));
-        Tema8.setText(String.valueOf(ContenidosVetores.getETIQUETA8().get(0)));
+        Tema8.setText(ContenidosVetores.getETIQUETA8(Contador));
         Tema8.setName(""); // NOI18N
         ListadoCursos.add(Tema8, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 440, 250, 40));
 
@@ -392,7 +414,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
         Tema9.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         Tema9.setForeground(new java.awt.Color(255, 255, 255));
-        Tema9.setText(String.valueOf(ContenidosVetores.getETIQUETA9().get(0))
+        Tema9.setText(ContenidosVetores.getETIQUETA9(Contador)
         );
         Tema9.setName(""); // NOI18N
         ListadoCursos.add(Tema9, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 500, 260, 40));
@@ -402,7 +424,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
         Tema10.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         Tema10.setForeground(new java.awt.Color(255, 255, 255));
-        Tema10.setText(String.valueOf(ContenidosVetores.getETIQUETA10().get(0)));
+        Tema10.setText(ContenidosVetores.getETIQUETA10(Contador));
         Tema10.setName(""); // NOI18N
         ListadoCursos.add(Tema10, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 560, 250, 40));
 
@@ -411,7 +433,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
         Tema11.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         Tema11.setForeground(new java.awt.Color(255, 255, 255));
-        Tema11.setText(String.valueOf(ContenidosVetores.getETIQUETA11().get(0)));
+        Tema11.setText(ContenidosVetores.getETIQUETA11(Contador));
         Tema11.setName(""); // NOI18N
         ListadoCursos.add(Tema11, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 620, 250, 40));
 
@@ -420,7 +442,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
         Tema12.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         Tema12.setForeground(new java.awt.Color(255, 255, 255));
-        Tema12.setText(String.valueOf(ContenidosVetores.getETIQUETA12().get(0)));
+        Tema12.setText(ContenidosVetores.getETIQUETA12(Contador));
         Tema12.setName(""); // NOI18N
         ListadoCursos.add(Tema12, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 680, 250, 40));
 
@@ -528,7 +550,7 @@ public class PaginaPricipal extends javax.swing.JFrame {
     private void HTMLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HTMLMouseClicked
         Contador = 1;
         VisibleHTML();
-        Visible();
+        Visible(Contador);
     }//GEN-LAST:event_HTMLMouseClicked
 
     private void CssMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CssMouseClicked
@@ -539,17 +561,16 @@ public class PaginaPricipal extends javax.swing.JFrame {
     private void ProtocolosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProtocolosMouseClicked
         Contador = 0;
         VisibleProtocolo();
-        Visible();
+        Visible(Contador);
 
     }//GEN-LAST:event_ProtocolosMouseClicked
 
     private void ProtocolosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProtocolosMouseEntered
 
         Contador = 0;
-        Texto();
 
         VisibleProtocolo();
-        Visible();
+        Visible(Contador);
         Morgan = java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/redes.wav"));
         Morgan.play();
 
@@ -557,10 +578,9 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
     private void HTMLMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HTMLMouseEntered
         Contador = 1;
-        Texto();
 
         VisibleHTML();
-        Visible();
+        Visible(Contador);
         Morgan = java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/html.wav"));
         Morgan.play();
 
@@ -582,13 +602,13 @@ public class PaginaPricipal extends javax.swing.JFrame {
 
         BotonesVisibles();
 
-        if (Tema1.getText().equals(String.valueOf(ContenidosVetores.getETIQUETA1().get(0)))) {
+        if (Tema1.getText().equals(ContenidosVetores.getETIQUETA1(0))) {
             ContadorContenido = 0;
 
             PaginaContenido.setText(String.valueOf(ContenidosVetores.getContenidoProtocolosTema1().get(ContadorContenido)));
             PaginaContenido.setVisible(true);
 
-        } else if (Tema1.getText().equals(String.valueOf(ContenidosVetores.getETIQUETA1().get(1)))) {
+        } else if (Tema1.getText().equals(ContenidosVetores.getETIQUETA1(1))) {
             ContadorContenido = 0;
             PaginaContenido.setText(String.valueOf(ContenidosVetores.getContenidoHTMLTema1().get(ContadorContenido)));
             PaginaContenido.setVisible(true);
